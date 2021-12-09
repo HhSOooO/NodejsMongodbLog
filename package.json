@@ -13,5 +13,8 @@
   ],
   "author": "HhS",
   "license": "GNU",
-  "git repository":"https://github.com/HhSOooO/NodejsMongodbLog"
+  "git repository": "https://github.com/HhSOooO/NodejsMongodbLog",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
