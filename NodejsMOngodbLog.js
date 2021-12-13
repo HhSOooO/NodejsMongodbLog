@@ -20,5 +20,8 @@ app.get("/input",(req,res)=>{
     console.log(req.query)
     const kitty = new mydata({ name: req.query.first,health: req.query.secind });
     kitty.save()
+    ejs.renderFile("result.html",{returnVal:"sucess"},(err,str)=>{
+        res.send(str)
+    })
 })
 app.listen(10807)
