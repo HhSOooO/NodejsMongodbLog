@@ -134,7 +134,7 @@ ul.topnav li.right {float: right;}
 					<p class="lead">打造独一无二的专属发型</p>
 					<hr class="my-4">
 					<p>点击下方按钮了解详情</p>
-					<a class="btn btn-primary btn-lg" href="hairlist.jsp" role="button">Learn
+					<a class="btn btn-primary btn-lg" href="hairlist.html" role="button">Learn
 						more</a>
 				</div>
 
@@ -143,7 +143,35 @@ ul.topnav li.right {float: right;}
 			
 			
 
+<div class="col-lg-3">
+	<div class="card">
+		<div class="card-header">当前已登录用户列表(<span id="c1">${onlineUserList.size()}</span>人)</div>
+		<div class="card-body">
+			<table class="table">
 
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">序号</th>
+						<th scope="col">用户名</th>
+						<th scope="col">登录时间</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${onlineUserList}" var="user" varStatus="i">
+						<tr>
+							<th scope="row">${i.count}</th>
+							<td>${user.username}</td>
+							<td>${user.loginTimeCn}</td>
+
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+			<button class="btn btn-primary" style="margin:15px" id="btn1">刷新</button>
+		</div>
+	</div>
+</div>
 
 			
 
