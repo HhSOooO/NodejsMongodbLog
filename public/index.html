@@ -57,7 +57,6 @@ ul.topnav li.right {float: right;}
 			<li style="color: #4CAF90;" class="left"><a class="navbar-brand"
 				href="#">Hair Dressing</a></li>
 			<li><a class="active" href="index.html">Home</a></li>
-			<li class="nav-item"><a class="nav-link" href="#">当日浏览量${count}</a></li>
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href=" " id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -144,49 +143,7 @@ ul.topnav li.right {float: right;}
 			
 			
 
-<div class="col-lg-3">
-	<div class="card">
-		<div class="card-header">当前已登录用户列表(<span id="c1">${onlineUserList.size()}</span>人)</div>
-		<div class="card-body">
-			<table class="table">
 
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">序号</th>
-						<th scope="col">用户名</th>
-						<th scope="col">登录时间</th>
-
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${onlineUserList}" var="user" varStatus="i">
-						<tr>
-							<th scope="row">${i.count}</th>
-							<td>${user.username}</td>
-							<td>${user.loginTimeCn}</td>
-
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-			<button class="btn btn-primary" style="margin:15px" id="btn1">刷新</button>
-		</div>
-	</div>
-	
-	<script>
-		var btn = document.getElementById("btn1");
-		btn.onclick = function(){
-			//从后台拿到最新的当前用户数，更新到现在
-			
-			
-			$.get("AjaxDemo1",{param:'abc',text:'hello'},function(data){
-				var c1 = document.getElementById("c1");
-				c1.innerHTML = data;
-				
-			});
-		}
-	</script>
-</div>
 
 			
 
