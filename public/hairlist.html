@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+    body {margin: 0;}
+    
+    
+    ul.topnav {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+    
+    ul.topnav li {float: left;}
+    
+    ul.topnav li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    ul.topnav li a:hover:not(.active) {background-color: #111;}
+    
+    ul.topnav li a.active {background-color: #4CAF90;}
+    
+    ul.topnav li.right {float: right;}
+    
+    @media screen and (max-width: 600px) {
+      ul.topnav li.right, 
+      ul.topnav li {float: none;}
+    }
+    </style>
+<title>Insert title here</title>
+<!-- bootstrap框架 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<div class="col-12">
+		<!-- 导航条 -->
+		<!-- <%@ include file="dht.jsp" %> -->
+
+		<ul class="topnav">
+			<li style="color: #4CAF90;" class="left"><a class="navbar-brand"
+				href="#">Hair Dressing</a></li>
+			<li><a href="index.jsp">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="#">当日浏览量${count}</a></li>
+			<li class="nav-item dropdown"><a
+				class="nav-link dropdown-toggle" href=" " id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> ${username==null?'未登录':username} </a> <c:if
+					test="${username!=null}">
+
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="MyInfo">我的信息</a> <a
+							class="dropdown-item" href="updatePwd.jsp">修改密码</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="Logout">注销</a>
+					</div>
+				</c:if></li>
+			<li class="right">
+				<form class="form-inline my-2 my-lg-0" method="post"
+					action="QueryUser">
+					<input class="form-control mr-sm-2" type="search" name="search"
+						placeholder="Search" aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</li>
+
+		</ul>
+
+		<!-- 内容  -->
+		<div class="row" style="margin-top: 10px">
+
+		
+
+<div class="col-lg-2">
+
+
+	<div class="list-group">
+		<a href="index.html" class="list-group-item list-group-item-action">首页</a>
+		<a href="login.html" class="list-group-item list-group-item-action">用户登录</a>
+		<a href="reg.html" class="list-group-item list-group-item-action">用户注册</a>
+		<a href="hairlist.html" class="list-group-item list-group-item-action">发型信息</a>
+		<a href="book.html" class="list-group-item list-group-item-action">发型预约</a>
+		<a href="AllBook" class="list-group-item list-group-item-action">用户预约列表</a>
+		<a href="AllUser" class="list-group-item list-group-item-action">会员用户列表</a>
+		
+
+		
+		<div class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href=" " id="navbarDropdown"
+				role="button" data-toggle="dropdown" aria-haspopup="true"
+				aria-expanded="false"> ${username==null?'未登录':username} </a>
+			<c:if test="${username!=null}">
+
+				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+					<a class="dropdown-item" href="MyInfo">我的信息</a> 
+					<a class="dropdown-item" href="updatePwd.jsp">修改密码</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="Logout">注销</a>
+				</div>
+			</c:if>
+		</div>
+	</div>
+
+
+</div>
+
+
+
+			<div class="col-lg-10">
+
+				<div class="row">
+					<div class="col-md-3">
+						<div class="card mb-4 shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="0%"
+								height="0" xmlns="http://www.w3.org/2000/svg"
+								preserveAspectRatio="xMidYMid slice" focusable="false"
+								role="img" aria-label="Placeholder: Thumbnail">
+								
+								<img src="photo/gzq.jpg" height="300" width="228" />
+								<text fill="#eceeef" dy=".3em" x="50%" y="50%">半公主切</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<a href="book.html">
+										<button type="button" class="btn btn-sm btn-outline-secondary">Book
+											Now</button></a>
+
+									</div>
+									<small class="text-muted">50 views</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card mb-4 shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="0%"
+								height="0" xmlns="http://www.w3.org/2000/svg"
+								preserveAspectRatio="xMidYMid slice" focusable="false"
+								role="img" aria-label="Placeholder: Thumbnail">
+								<img src="photo/fxx.jpg" height="300" width="300" />
+								<title>Placeholder</title><rect fill="#55595c" width="100%"
+									height="100%" />
+								
+								<text fill="#eceeef" dy=".3em" x="50%" y="50%">韩式齐刘海</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<a href="book.html">
+										<button type="button" class="btn btn-sm btn-outline-secondary">Book
+											Now</button></a>
+
+									</div>
+									<small class="text-muted">100 views</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card mb-4 shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="0%"
+								height="0" xmlns="http://www.w3.org/2000/svg"
+								preserveAspectRatio="xMidYMid slice" focusable="false"
+								role="img" aria-label="Placeholder: Thumbnail">
+								 <img src="photo/lss.jpg" height="300" width="200" />
+								<title>Placeholder</title><rect fill="#55595c" width="100%"
+									height="100%" />
+								
+								<text fill="#eceeef" dy=".3em" x="50%" y="50%">韩式微波浪</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<a href="book.html">
+										<button type="button" class="btn btn-sm btn-outline-secondary">Book
+											Now</button></a>
+									</div>
+									<small class="text-muted">46 views</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card mb-4 shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="0%"
+								height="0" xmlns="http://www.w3.org/2000/svg"
+								preserveAspectRatio="xMidYMid slice" focusable="false"
+								role="img" aria-label="Placeholder: Thumbnail">
+								
+								<img src="photo/dbl.jpg" height="300" width="238" />
+								<text fill="#eceeef" dy=".3em" x="50%" y="50%">大波浪</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<a href="book.html">
+										<button type="button" class="btn btn-sm btn-outline-secondary">Book
+											Now</button></a>
+
+									</div>
+									<small class="text-muted">50 views</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card mb-4 shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="0%"
+								height="0" xmlns="http://www.w3.org/2000/svg"
+								preserveAspectRatio="xMidYMid slice" focusable="false"
+								role="img" aria-label="Placeholder: Thumbnail">
+								<img src="photo/ff.jpg" height="300" width="237" />
+								<title>Placeholder</title><rect fill="#55595c" width="100%"
+									height="100%" />
+								
+								<text fill="#eceeef" dy=".3em" x="50%" y="50%">粉色染发</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<a href="book.html">
+										<button type="button" class="btn btn-sm btn-outline-secondary">Book
+											Now</button></a>
+
+									</div>
+									<small class="text-muted">100 views</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card mb-4 shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="0%"
+								height="0" xmlns="http://www.w3.org/2000/svg"
+								preserveAspectRatio="xMidYMid slice" focusable="false"
+								role="img" aria-label="Placeholder: Thumbnail">
+								 <img src="photo/fsdbl.jpg" height="300" width="224" />
+								<title>Placeholder</title><rect fill="#55595c" width="100%"
+									height="100%" />
+								
+								<text fill="#eceeef" dy=".3em" x="50%" y="50%">法式大波浪</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<a href="book.html">
+										<button type="button" class="btn btn-sm btn-outline-secondary">Book
+											Now</button></a>
+									</div>
+									<small class="text-muted">46 views</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card mb-4 shadow-sm">
+							<svg class="bd-placeholder-img card-img-top" width="0%"
+								height="0" xmlns="http://www.w3.org/2000/svg"
+								preserveAspectRatio="xMidYMid slice" focusable="false"
+								role="img" aria-label="Placeholder: Thumbnail">
+								 <img src="photo/hz.jpg" height="300" width="224" />
+								<title>Placeholder</title><rect fill="#55595c" width="100%"
+									height="100%" />
+								
+								<text fill="#eceeef" dy=".3em" x="50%" y="50%">灰棕烫发</text></svg>
+							<div class="card-body">
+								<p class="card-text">This is a wider card with supporting
+									text below as a natural lead-in to additional content. This
+									content is a little bit longer.</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group">
+										<a href="book.html">
+										<button type="button" class="btn btn-sm btn-outline-secondary">Book
+											Now</button></a>
+									</div>
+									<small class="text-muted">46 views</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+				
+
+
+
+			</div>
+
+
+
+			<!-- 右边栏 -->
+		</div>
+
+	</div>
+</body>
+</html>
