@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const ejs = require("ejs")
 const bodyparser = require('body-parser')
 app.use(bodyparser.json())
-mongoose.connect('mongodb://172.21.2.236:27017/190110910807');
+// mongoose.connect('mongodb://172.21.2.236:27017/190110910807');
+mongoose.connect('mongodb://localhost/test');
 
 app.use('/', express.static('public'))
 
@@ -34,13 +35,13 @@ app.use(express.urlencoded({ extended: false })) // for parsing application/x-ww
 app.use('/', express.static('public'))
 
 //注册
-app.get('/RegAction', function (req, res, next) {
+app.get('/RegAction',  (req, res)=> {
     username = req.query.username;
     password = req.query.password;
     sex = req.query.sex;
     birth = req.query.birth;
     phone = req.query.phone;
-    next();
+    // next();
     console.log(username, password, sex, birth, phone)
     const fuser = new data({ username: username, password: password, sex: sex, birth: birth, phone: phone });
     fuser.save().then(() => console.log('注册成功'));
@@ -48,14 +49,14 @@ app.get('/RegAction', function (req, res, next) {
 })
 
 //预约
-app.get('/BookAction', function (req, res, next) {
+app.get('/BookAction',  (req, res)=> {
     username = req.query.username;
     sex = req.query.sex;
     hair = req.query.hair;
     date = req.query.date;
     time = req.query.time;
     phone = req.query.phone;
-    next();
+    // next();
     console.log(username, sex, hair, date, time, phone)
     const fbuser = new bookdata({ username: username, sex: sex, hair: hair, date: date, time: time, phone: phone });
     fbuser.save().then(() => console.log('预约成功'));
@@ -92,7 +93,7 @@ app.get('/Sevlet02', (req, res) => { //处理登录请求
 });
 
 //注销
-app.get('/Logout', function (req, res) {//注销,转到登录页面
+app.get('/Logout', (req, res) =>{//注销,转到登录页面
     res.redirect('/login.html');
 });
 

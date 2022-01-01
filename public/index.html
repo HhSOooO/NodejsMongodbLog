@@ -1,52 +1,66 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<style>
-body {margin: 0;}
+	<style>
+		body {
+			margin: 0;
+		}
 
-ul.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
+		ul.topnav {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #333;
+		}
 
-ul.topnav li {float: left;}
+		ul.topnav li {
+			float: left;
+		}
 
-ul.topnav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+		ul.topnav li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
 
-ul.topnav li a:hover:not(.active) {background-color: #111;}
+		ul.topnav li a:hover:not(.active) {
+			background-color: #111;
+		}
 
-ul.topnav li a.active {background-color: #4CAF90;}
+		ul.topnav li a.active {
+			background-color: #4CAF90;
+		}
 
-ul.topnav li.right {float: right;}
+		ul.topnav li.right {
+			float: right;
+		}
 
-@media screen and (max-width: 600px) {
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
-}
-</style>
-<title>Insert title here</title>
+		@media screen and (max-width: 600px) {
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+			ul.topnav li.right,
+			ul.topnav li {
+				float: none;
+			}
+		}
+	</style>
+	<title>Insert title here</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
 	<div class="col-12">
@@ -54,27 +68,13 @@ ul.topnav li.right {float: right;}
 		<!-- <%@ include file="dht.jsp" %> -->
 
 		<ul class="topnav">
-			<li style="color: #4CAF90;" class="left"><a class="navbar-brand"
-				href="#">Hair Dressing</a></li>
+			<li style="color: #4CAF90;" class="left"><a class="navbar-brand" href="#">Hair Dressing</a></li>
 			<li><a class="active" href="index.html">Home</a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href=" " id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">{username==loguser?'未登录':username} </a> <c:if
-					test="${username!=loguser}">
-
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="MyInfo">我的信息</a> <a
-							class="dropdown-item" href="updatePwd.jsp">修改密码</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="/Logout">注销</a>
-					</div>
-				</c:if></li>
+			
 			<li class="right">
-				<form class="form-inline my-2 my-lg-0" method="post"
-					action="QueryUser">
-					<input class="form-control mr-sm-2" type="search" name="search"
-						placeholder="Search" aria-label="Search">
+				<form class="form-inline my-2 my-lg-0" method="post" action="QueryUser">
+					<input class="form-control mr-sm-2" type="search" name="search" placeholder="Search"
+						aria-label="Search">
 					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 				</form>
 			</li>
@@ -84,53 +84,48 @@ ul.topnav li.right {float: right;}
 		<!-- 内容  -->
 		<div class="row" style="margin-top: 10px">
 
-		
 
 
-<div class="col-lg-2">
+
+			<div class="col-lg-2">
 
 
-	<div class="list-group">
-		<a href="index.html" class="list-group-item list-group-item-action">首页</a>
-		<a href="login.html" class="list-group-item list-group-item-action">用户登录</a>
-		<a href="reg.html" class="list-group-item list-group-item-action">用户注册</a>
-		<a href="hairlist.html" class="list-group-item list-group-item-action">发型信息</a>
-		<a href="book.html" class="list-group-item list-group-item-action">发型预约</a>
-		<a href="/AllBook" class="list-group-item list-group-item-action">用户预约列表</a>
-		<a href="AllUser" class="list-group-item list-group-item-action">会员用户列表</a>
-		
+				<div class="list-group">
+					<a href="index.html" class="list-group-item list-group-item-action">首页</a>
+					<a href="login.html" class="list-group-item list-group-item-action">用户登录</a>
+					<a href="reg.html" class="list-group-item list-group-item-action">用户注册</a>
+					<a href="hairlist.html" class="list-group-item list-group-item-action">发型信息</a>
+					<a href="book.html" class="list-group-item list-group-item-action">发型预约</a>
 
-		
-		<div class="nav-item dropdown">
-			<a class="nav-link dropdown-toggle" href=" " id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> ${username==null?'未登录':username} </a>
-			<c:if test="${username!=null}">
 
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="MyInfo">我的信息</a> 
-					<a class="dropdown-item" href="updatePwd.jsp">修改密码</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="/Logout">注销</a>
+					<div class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href=" " id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 个人中心 </a>
+						<c:if test="${username!=null}">
+
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="MyInfo">我的信息</a>
+								<a class="dropdown-item" href="updatePwd.jsp">修改密码</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="/Logout">注销</a>
+							</div>
+						</c:if>
+					</div>
 				</div>
-			</c:if>
-		</div>
-	</div>
 
 
-</div>
+			</div>
 
 
 
-			<div class="col-lg-7">
+			<div class="col-lg-9">
 
 
 				<div class="jumbotron">
 					<h1 class="display-4">Hair Dressing</h1>
 					<h1 class="display-4">明星发廊</h1>
-					<img src="photo/gzq.jpg" height="300" width="228" /> <img
-						src="photo/fxx.jpg" height="300" width="300" /> <img
-						src="photo/lss.jpg" height="300" width="200" />
+					<img src="photo/gzq.jpg" height="300" width="228" /> <img src="photo/fxx.jpg" height="300"
+						width="300" /> <img src="photo/lss.jpg" height="300" width="200" />
 					<p class="lead">打造独一无二的专属发型</p>
 					<hr class="my-4">
 					<p>点击下方按钮了解详情</p>
@@ -140,40 +135,8 @@ ul.topnav li.right {float: right;}
 
 
 			</div>
-			
-			
 
-<div class="col-lg-3">
-	<div class="card">
-		<div class="card-header">当前已登录用户列表(<span id="c1">${onlineUserList.size()}</span>人)</div>
-		<div class="card-body">
-			<table class="table">
 
-				<thead class="thead-dark">
-					<tr>
-						<th scope="col">序号</th>
-						<th scope="col">用户名</th>
-						<th scope="col">登录时间</th>
-
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${onlineUserList}" var="user" varStatus="i">
-						<tr>
-							<th scope="row">${i.count}</th>
-							<td>${user.username}</td>
-							<td>${user.loginTimeCn}</td>
-
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-			<button class="btn btn-primary" style="margin:15px" id="btn1">刷新</button>
-		</div>
-	</div>
-</div>
-
-			
 
 			<!-- 右边栏 -->
 		</div>
@@ -183,4 +146,5 @@ ul.topnav li.right {float: right;}
 
 
 </body>
+
 </html>

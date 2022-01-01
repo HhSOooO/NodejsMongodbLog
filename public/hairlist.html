@@ -57,19 +57,7 @@
 			<li style="color: #4CAF90;" class="left"><a class="navbar-brand"
 				href="#">Hair Dressing</a></li>
 			<li><a href="index.html">Home</a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href=" " id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> ${username==null?'未登录':username} </a> <c:if
-					test="${username!=null}">
-
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="MyInfo">我的信息</a> <a
-							class="dropdown-item" href="updatePwd.jsp">修改密码</a>
-						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="Logout">注销</a>
-					</div>
-				</c:if></li>
+			
 			<li class="right">
 				<form class="form-inline my-2 my-lg-0" method="post"
 					action="QueryUser">
@@ -95,15 +83,13 @@
 		<a href="reg.html" class="list-group-item list-group-item-action">用户注册</a>
 		<a href="hairlist.html" class="list-group-item list-group-item-action">发型信息</a>
 		<a href="book.html" class="list-group-item list-group-item-action">发型预约</a>
-		<a href="AllBook" class="list-group-item list-group-item-action">用户预约列表</a>
-		<a href="AllUser" class="list-group-item list-group-item-action">会员用户列表</a>
 		
 
 		
 		<div class="nav-item dropdown">
 			<a class="nav-link dropdown-toggle" href=" " id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> ${username==null?'未登录':username} </a>
+				aria-expanded="false"> 个人中心 </a>
 			<c:if test="${username!=null}">
 
 				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -134,9 +120,7 @@
 								<img src="photo/gzq.jpg" height="300" width="228" />
 								<text fill="#eceeef" dy=".3em" x="50%" y="50%">半公主切</text></svg>
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">前短后长的发型。</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
 										<a href="book.html">
@@ -161,9 +145,7 @@
 								
 								<text fill="#eceeef" dy=".3em" x="50%" y="50%">韩式齐刘海</text></svg>
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">韩风满满的优雅齐刘海</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
 										<a href="book.html">
@@ -188,9 +170,7 @@
 								
 								<text fill="#eceeef" dy=".3em" x="50%" y="50%">韩式微波浪</text></svg>
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">小温柔的微波浪显气质</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
 										<a href="book.html">
@@ -212,9 +192,7 @@
 								<img src="photo/dbl.jpg" height="300" width="238" />
 								<text fill="#eceeef" dy=".3em" x="50%" y="50%">大波浪</text></svg>
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">大波浪别样感觉</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
 										<a href="book.html">
@@ -239,9 +217,7 @@
 								
 								<text fill="#eceeef" dy=".3em" x="50%" y="50%">粉色染发</text></svg>
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">粉色抓人眼球又显白</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
 										<a href="book.html">
@@ -266,9 +242,7 @@
 								
 								<text fill="#eceeef" dy=".3em" x="50%" y="50%">法式大波浪</text></svg>
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text"> 大波浪优雅法式风情</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
 										<a href="book.html">
@@ -292,9 +266,7 @@
 								
 								<text fill="#eceeef" dy=".3em" x="50%" y="50%">灰棕烫发</text></svg>
 							<div class="card-body">
-								<p class="card-text">This is a wider card with supporting
-									text below as a natural lead-in to additional content. This
-									content is a little bit longer.</p>
+								<p class="card-text">低调又显气质的颜色</p>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="btn-group">
 										<a href="book.html">
