@@ -136,23 +136,79 @@
 							</thead>
 							<tbody>
 							
-								<c:forEach items="${bookList}" var="user" varStatus="i">
+								<!-- <c:forEach items="${bookList}" var="user" varStatus="i"> -->
 							
 									<tr>
-										<th scope="row">${i.count}</th>
-										<td>${user.username}</td>
-										<td>${user.sex}</td>
-										<td>${user.hair}</td>
-										<td>${user.date}</td>
-										<td>${user.time}</td>
-										<td>${user.phone}</td>
+										<th scope="row">1</th>
+										<td>JXCJXC</td>
+										<td>女</td>
+										<td>粉色烫发</td>
+										<td>2021-07-07</td>
+										<td>11：00AM</td>
+										<td>123</td>
 										<td>
 											<c:if test="${user.vip==true}"><a type="button" class="btn btn-danger" href="InvalidUser?id=${user.id}">会员用户</a></c:if>
 											<c:if test="${user.vip!=true}"><a type="button" class="btn btn-primary" href="RenewUser?id=${user.id}">非会员用户</a></c:if>
 											<a type="button" class="btn btn-danger" href="UserInfo?username=${user.username}">用户详情</a>
 										</td>
 									</tr>
-								</c:forEach>
+									<tr>
+										<th scope="row">2</th>
+										<td>KKKKK</td>
+										<td>男</td>
+										<td>剪发</td>
+										<td>2021-08-09</td>
+										<td>11：00AM</td>
+										<td>123123</td>
+										<td>
+											<c:if test="${user.vip==true}"><a type="button" class="btn btn-danger" href="InvalidUser?id=${user.id}">会员用户</a></c:if>
+											<c:if test="${user.vip!=true}"><a type="button" class="btn btn-primary" href="RenewUser?id=${user.id}">非会员用户</a></c:if>
+											<a type="button" class="btn btn-danger" href="UserInfo?username=${user.username}">用户详情</a>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">3</th>
+										<td>QQQQQQ</td>
+										<td>女</td>
+										<td>公主切</td>
+										<td>2021-10-09</td>
+										<td>01：00AM</td>
+										<td>123123</td>
+										<td>
+											<c:if test="${user.vip==true}"><a type="button" class="btn btn-primary" href="InvalidUser?id=${user.id}">会员用户</a></c:if>
+											<c:if test="${user.vip!=true}"><a type="button" class="btn btn-danger" href="RenewUser?id=${user.id}">非会员用户</a></c:if>
+											<a type="button" class="btn btn-danger" href="UserInfo?username=${user.username}">用户详情</a>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">4</th>
+										<td>LYHLYH</td>
+										<td>女</td>
+										<td>法式大波浪</td>
+										<td>2021-11-09</td>
+										<td>12：00AM</td>
+										<td>123123</td>
+										<td>
+											<c:if test="${user.vip==true}"><a type="button" class="btn btn-danger" href="InvalidUser?id=${user.id}">会员用户</a></c:if>
+											<c:if test="${user.vip!=true}"><a type="button" class="btn btn-primary" href="RenewUser?id=${user.id}">非会员用户</a></c:if>
+											<a type="button" class="btn btn-danger" href="UserInfo?username=${user.username}">用户详情</a>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">5</th>
+										<td>TTTTTTT</td>
+										<td>男</td>
+										<td>自选发色染发</td>
+										<td>2021-12-12</td>
+										<td>12：30PM</td>
+										<td>1123</td>
+										<td>
+											<c:if test="${user.vip==true}"><a type="button" class="btn btn-danger" href="InvalidUser?id=${user.id}">会员用户</a></c:if>
+											<c:if test="${user.vip!=true}"><a type="button" class="btn btn-primary" href="RenewUser?id=${user.id}">非会员用户</a></c:if>
+											<a type="button" class="btn btn-danger" href="UserInfo?username=${user.username}">用户详情</a>
+										</td>
+									</tr>
+								<!-- </c:forEach> -->
 							</tbody>
 						</table>
 
