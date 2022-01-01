@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Insert title here</title>
+
+	<style>
+		body {
+			margin: 0;
+		}
+
+		ul.topnav {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #333;
+		}
+
+		ul.topnav li {
+			float: left;
+		}
+
+		ul.topnav li a {
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		ul.topnav li a:hover:not(.active) {
+			background-color: #111;
+		}
+
+		ul.topnav li a.active {
+			background-color: #4CAF90;
+		}
+
+		ul.topnav li.right {
+			float: right;
+		}
+
+		@media screen and (max-width: 600px) {
+
+			ul.topnav li.right,
+			ul.topnav li {
+				float: none;
+			}
+		}
+	</style>
+
+	<!-- bootstrap框架 -->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+	<div class="col-12">
+
+		<!-- 导航条 -->
+
+		<ul class="topnav">
+			<li class="left"><a class="navbar-brand" href="#">Hair Dressing</a></li>
+			<li><a class="nav-item" href="index.html">Home</a></li>
+			<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=" " id="navbarDropdown" role="button"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> ${username==null?'未登录':username}
+				</a>
+
+				<c:if test="${username!=null}">
+
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="MyInfo">我的信息</a> <a class="dropdown-item"
+							href="updatePwd.jsp">修改密码</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="Logout">注销</a>
+					</div>
+				</c:if>
+			</li>
+			<li class="right">
+				<form class="form-inline my-2 my-lg-0" method="post" action="QueryUser">
+					<input class="form-control mr-sm-2" type="search" name="search" placeholder="Search"
+						aria-label="Search">
+					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				</form>
+			</li>
+
+		</ul>
+
+		<div class="row" style="margin-top: 10px">
+
+			<div class="col-lg-2">
+
+
+				<div class="list-group">
+					<a href="index.html" class="list-group-item list-group-item-action">首页</a>
+					<a href="login.html" class="list-group-item list-group-item-action">用户登录</a>
+					<a href="reg.html" class="list-group-item list-group-item-action">用户注册</a>
+					<a href="hairlist.html" class="list-group-item list-group-item-action">发型信息</a>
+					<a href="book.html" class="list-group-item list-group-item-action">发型预约</a>
+					<a href="AllBook" class="list-group-item list-group-item-action">用户预约列表</a>
+					<a href="AllUser" class="list-group-item list-group-item-action">会员用户列表</a>
+
+
+
+					<div class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href=" " id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							${username==null?'未登录':username} </a>
+						<c:if test="${username!=null}">
+
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="MyInfo">我的信息</a>
+								<a class="dropdown-item" href="updatePwd.jsp">修改密码</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="Logout">注销</a>
+							</div>
+						</c:if>
+					</div>
+				</div>
+
+
+			</div>
+
+
+
+
+			<div class="col-lg-9">
+				<div class="card border-primary">
+					<div class="card-header">用户预约列表</div>
+					<div class="card-body">
+						<table class="table">
+							<thead class="thead-dark">
+								<tr>
+									<th scope="col">序号</th>
+									<th scope="col">姓名</th>
+									<th scope="col">性别</th>
+									<th scope="col">预约发型</th>
+									<th scope="col">预约日期</th>
+									<th scope="col">预约时间</th>
+									<th scope="col">电话号码</th>
+									<th scope="col">操作</th>
+								</tr>
+							</thead>
+							<tbody>
+							
+								<c:forEach items="${bookList}" var="user" varStatus="i">
+							
+									<tr>
+										<th scope="row">${i.count}</th>
+										<td>${user.username}</td>
+										<td>${user.sex}</td>
+										<td>${user.hair}</td>
+										<td>${user.date}</td>
+										<td>${user.time}</td>
+										<td>${user.phone}</td>
+										<td>
+											<c:if test="${user.vip==true}"><a type="button" class="btn btn-danger" href="InvalidUser?id=${user.id}">会员用户</a></c:if>
+											<c:if test="${user.vip!=true}"><a type="button" class="btn btn-primary" href="RenewUser?id=${user.id}">非会员用户</a></c:if>
+											<a type="button" class="btn btn-danger" href="UserInfo?username=${user.username}">用户详情</a>
+										</td>
+									</tr>
+								</c:forEach>
+							</tbody>
+						</table>
+
+					
+
+					</div>
+				</div>
+			</div>
+			<!-- 右边栏 -->
+
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>

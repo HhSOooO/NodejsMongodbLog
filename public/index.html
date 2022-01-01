@@ -60,14 +60,14 @@ ul.topnav li.right {float: right;}
 			<li class="nav-item dropdown"><a
 				class="nav-link dropdown-toggle" href=" " id="navbarDropdown"
 				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> ${username==null?'未登录':username} </a> <c:if
-					test="${username!=null}">
+				aria-expanded="false">{username==loguser?'未登录':username} </a> <c:if
+					test="${username!=loguser}">
 
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="MyInfo">我的信息</a> <a
 							class="dropdown-item" href="updatePwd.jsp">修改密码</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="Logout">注销</a>
+						<a class="dropdown-item" href="/Logout">注销</a>
 					</div>
 				</c:if></li>
 			<li class="right">
@@ -96,7 +96,7 @@ ul.topnav li.right {float: right;}
 		<a href="reg.html" class="list-group-item list-group-item-action">用户注册</a>
 		<a href="hairlist.html" class="list-group-item list-group-item-action">发型信息</a>
 		<a href="book.html" class="list-group-item list-group-item-action">发型预约</a>
-		<a href="AllBook" class="list-group-item list-group-item-action">用户预约列表</a>
+		<a href="/AllBook" class="list-group-item list-group-item-action">用户预约列表</a>
 		<a href="AllUser" class="list-group-item list-group-item-action">会员用户列表</a>
 		
 
@@ -111,7 +111,7 @@ ul.topnav li.right {float: right;}
 					<a class="dropdown-item" href="MyInfo">我的信息</a> 
 					<a class="dropdown-item" href="updatePwd.jsp">修改密码</a>
 					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="Logout">注销</a>
+					<a class="dropdown-item" href="/Logout">注销</a>
 				</div>
 			</c:if>
 		</div>
